@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:team_pickup/league_page.dart';
 import 'package:team_pickup/profile_page.dart';
 import 'package:team_pickup/teams_page.dart';
 
@@ -37,10 +38,20 @@ class HomePage extends StatelessWidget {
               width: double.infinity,
               child: RaisedButton(
                 color: Colors.red,
-                child: Text("Avalible Teams"),
+                child: Text("Teams"),
                 onPressed: () {
                   Navigator.push(context,
                       MaterialPageRoute(builder: (context) => TeamsPage()));
+                },
+              )),
+          SizedBox(
+              width: double.infinity,
+              child: RaisedButton(
+                color: Colors.red,
+                child: Text("Leagues"),
+                onPressed: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => LeaguesPage()));
                 },
               )),
           SizedBox(
