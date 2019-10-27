@@ -8,7 +8,7 @@ class TeamsPage extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.blueGrey,
       appBar: AppBar(
-        title: Text("Avalible Teams"),
+        title: Text("Teams"),
       ),
       body: Column(
         children: <Widget>[
@@ -34,11 +34,51 @@ class TeamsPage extends StatelessWidget {
             child: RaisedButton(
               child: Text("Team Fuego"),
             )
+          ),
+          Container(
+            alignment: Alignment.bottomCenter,
+            child: SizedBox(
+            width: double.infinity,
+            child: RaisedButton(
+              child: Text("Create a Team"),
+              onPressed: (){Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => CreateTeam()));
+              },
+            ),
+          ),
           )
         ],
       ),
     );
   }
+}
+
+class CreateTeam extends StatelessWidget{
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: Text("Create a League"),),
+      backgroundColor: Colors.white,
+      body: Form(
+        child: Column(
+          children: <Widget>[
+            TextFormField(decoration: new InputDecoration.collapsed(hintText: "Name"),),
+            TextFormField(decoration: new InputDecoration.collapsed(hintText: "Sport"),),
+            TextFormField(decoration: new InputDecoration.collapsed(hintText: "Bio"),),
+            TextFormField(decoration: new InputDecoration.collapsed(hintText: "Player 1"),),
+            TextFormField(decoration: new InputDecoration.collapsed(hintText: "Player 2"),),
+            SizedBox(
+            width: double.infinity,
+            child: RaisedButton(
+              child: Text("Submit"),
+            ),
+          ),
+          ],
+        ),
+      ),
+    );
+  }
+  
 }
 
 

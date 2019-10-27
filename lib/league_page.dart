@@ -34,11 +34,49 @@ class LeaguesPage extends StatelessWidget {
             child: RaisedButton(
               child: Text("Closed League"),
             )
+          ),
+          Container(
+            alignment: Alignment.bottomCenter,
+            child: SizedBox(
+            width: double.infinity,
+            child: RaisedButton(
+              child: Text("Create a League"),
+              onPressed: (){Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => CreateLeague()));
+              },
+            ),
+          ),
           )
         ],
       ),
     );
   }
+}
+
+class CreateLeague extends StatelessWidget{
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: Text("Create a League"),),
+      backgroundColor: Colors.white,
+      body: Form(
+        child: Column(
+          children: <Widget>[
+            TextFormField(decoration: new InputDecoration.collapsed(hintText: "Name"),),
+            TextFormField(decoration: new InputDecoration.collapsed(hintText: "Sport"),),
+            TextFormField(decoration: new InputDecoration.collapsed(hintText: "Bio"),),
+            SizedBox(
+            width: double.infinity,
+            child: RaisedButton(
+              child: Text("Submit"),
+            ),
+          ),
+          ],
+        ),
+      ),
+    );
+  }
+  
 }
 
 
@@ -91,7 +129,7 @@ class JoinLeague extends StatelessWidget{
               child: Text("Send Join Request"),
               onPressed: (){null;},
             ),
-          )
+          ),
         ],
       ),
     );
