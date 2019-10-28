@@ -127,7 +127,9 @@ class JoinLeague extends StatelessWidget{
             width: double.infinity,
             child: RaisedButton(
               child: Text("Send Join Request"),
-              onPressed: (){null;},
+              onPressed: (){Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => JoinLeagueRequest()));
+              },
             ),
           ),
         ],
@@ -135,4 +137,28 @@ class JoinLeague extends StatelessWidget{
     );
   }
 
+}
+
+class JoinLeagueRequest extends StatelessWidget{
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: Text("Request to Join League"),),
+      backgroundColor: Colors.white,
+      body: Form(
+        child: Column(
+          children: <Widget>[
+            TextFormField(decoration: new InputDecoration.collapsed(hintText: "Team Name"),),
+            SizedBox(
+              width: double.infinity,
+              child: RaisedButton(
+                child: Text("Submit"),
+                onPressed: () {null;},
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
 }

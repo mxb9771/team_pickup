@@ -103,7 +103,8 @@ class JoinTeam extends StatelessWidget{
             width: double.infinity,
             child: RaisedButton(
               child: Text("View Players"),
-              onPressed: (){null;},
+              onPressed: (){Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => ViewTeam()));},
             ),
           ),
           SizedBox(
@@ -118,4 +119,31 @@ class JoinTeam extends StatelessWidget{
     );
   }
 
+}
+
+class ViewTeam extends StatelessWidget{
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Players"),
+      ),
+      body: Column(
+        children: <Widget>[
+          Container(
+            width: 100,
+            height: 100,
+            child: Image.asset('assets/images/profile.jpg'),
+          ),
+          SizedBox(
+            width: 100,
+            child: RaisedButton(
+              child: Text("Lucas"),
+              onPressed: (){null;},
+            )
+          ),
+        ],
+      ),
+    );
+  }
 }
