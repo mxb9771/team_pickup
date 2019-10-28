@@ -57,7 +57,7 @@ class CreateTeam extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("Create a League"),),
+      appBar: AppBar(title: Text("Create a Team"),),
       backgroundColor: Colors.white,
       body: Form(
         child: Column(
