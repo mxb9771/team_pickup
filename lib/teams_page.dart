@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:team_pickup/profile_page.dart';
 
 //home page to have routes to all other pages
 class TeamsPage extends StatelessWidget {
@@ -139,7 +140,8 @@ class ViewTeam extends StatelessWidget{
             width: 100,
             child: RaisedButton(
               child: Text("Lucas"),
-              onPressed: (){null;},
+              onPressed: (){Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => ProfilePage()));},
             )
           ),
         ],
