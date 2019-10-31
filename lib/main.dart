@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:team_pickup/league_page.dart';
+import 'package:team_pickup/login_page.dart';
 import 'package:team_pickup/profile_page.dart';
 import 'package:team_pickup/teams_page.dart';
 
@@ -15,7 +16,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.red,
       ),
-      home: HomePage(),
+      home: LoginPage(),
     );
   }
 }
