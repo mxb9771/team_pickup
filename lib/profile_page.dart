@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
 
+import 'Model/user.dart';
+
 //home page to have routes to all other pages
 class ProfilePage extends StatelessWidget {
+  User user;
+  ProfilePage({Key key, this.user});
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +29,7 @@ class ProfilePage extends StatelessWidget {
         ),
         new Container(
           alignment: Alignment(0, 0.3),
-          child: Text('Lucas Golden',
+          child: Text(user.getName(),
           style: TextStyle(fontSize: 50),),
         ),
         new Container(
