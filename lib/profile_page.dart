@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 
+import 'Model/database.dart';
 import 'Model/user.dart';
 
 //home page to have routes to all other pages
 class ProfilePage extends StatelessWidget {
   User user;
-  ProfilePage({Key key, this.user});
+  Database database;
+  ProfilePage({Key key, this.user, this.database});
 
   @override
   Widget build(BuildContext context) {

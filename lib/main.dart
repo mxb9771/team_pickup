@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:team_pickup/Model/database.dart';
 import 'package:team_pickup/Model/user.dart';
 import 'package:team_pickup/league_page.dart';
 import 'package:team_pickup/login_page.dart';
@@ -18,7 +19,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.red,
       ),
-      home: LoginPage(),
+      home: LoginPage(database: new Database(),),
     );
   }
 }
@@ -27,7 +28,8 @@ class MyApp extends StatelessWidget {
 //home page to have routes to all other pages
 class HomePage extends StatelessWidget {
   User user;
-  HomePage({Key key, this.user});
+  Database database;
+  HomePage({Key key, this.user, this.database});
 
   @override
   Widget build(BuildContext context) {
