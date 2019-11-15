@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:team_pickup/profile_page.dart';
 
 //home page to have routes to all other pages
-class TeamsPage extends StatelessWidget {
+class GamesPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return Scaffold( 
       backgroundColor: Colors.white,
       appBar: AppBar(
-        title: Text("Teams"),
+        title: Text("Games"),
       ),
       body: Column(
         children: <Widget>[
@@ -17,23 +17,11 @@ class TeamsPage extends StatelessWidget {
             width: double.infinity,
             child: RaisedButton(
               color: Colors.red,
-              child: Text("The Spartans", style: TextStyle(color: Colors.white)),
+              child: Text("5v5 Basketball", style: TextStyle(color: Colors.white)),
               onPressed: (){
                 Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => JoinTeam()));
+                    MaterialPageRoute(builder: (context) => JoinGame()));
               },
-            )
-          ),
-          SizedBox(
-            width: double.infinity,
-            child: RaisedButton(
-              child: Text("Knights"),
-            ),
-          ),
-          SizedBox(
-            width: double.infinity,
-            child: RaisedButton(
-              child: Text("Team Fuego"),
             )
           ),
           Container(
@@ -41,9 +29,9 @@ class TeamsPage extends StatelessWidget {
             child: SizedBox(
             width: double.infinity,
             child: RaisedButton(
-              child: Text("Create a Team"),
+              child: Text("Create a Game"),
               onPressed: (){Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => CreateTeam()));
+                    MaterialPageRoute(builder: (context) => CreateGame()));
               },
             ),
           ),
@@ -54,18 +42,19 @@ class TeamsPage extends StatelessWidget {
   }
 }
 
-class CreateTeam extends StatelessWidget{
+class CreateGame extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("Create a Team"),),
+      appBar: AppBar(title: Text("Create a Game", ),),
       backgroundColor: Colors.white,
       body: Form(
         child: Column(
           children: <Widget>[
             TextFormField(decoration: new InputDecoration.collapsed(hintText: "Name"),),
             TextFormField(decoration: new InputDecoration.collapsed(hintText: "Sport"),),
-            TextFormField(decoration: new InputDecoration.collapsed(hintText: "Bio"),),
+            TextFormField(decoration: new InputDecoration.collapsed(hintText: "Time"),),
+            TextFormField(decoration: new InputDecoration.collapsed(hintText: "Location"),),
             TextFormField(decoration: new InputDecoration.collapsed(hintText: "Player 1"),),
             TextFormField(decoration: new InputDecoration.collapsed(hintText: "Player 2"),),
             SizedBox(
@@ -83,29 +72,33 @@ class CreateTeam extends StatelessWidget{
 }
 
 
-class JoinTeam extends StatelessWidget{
+class JoinGame extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Team Overview"),
+        title: Text("Game Overview"),
       ),
       body: Column(
         children: <Widget>[
           Container(
-            width: 50,
-              height: 50,
-              child: Image.asset('assets/images/spartan.jpg')
+            margin: const EdgeInsets.only(top: 20.0),
+            child: Text("5v5 Basketball"),
           ),
           Container(
-            child: Text("Team Discription:\nLucas is the worst player on the team"),
+            margin: const EdgeInsets.only(top: 20.0),
+            child: Text("Friday, November 15 2-5PM"),
+          ),
+          Container(
+            margin: const EdgeInsets.only(top: 20.0),
+            child: Text("RIT gym court 3"),
           ),
           SizedBox(
             width: double.infinity,
             child: RaisedButton(
               child: Text("View Players"),
               onPressed: (){Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => ViewTeam()));},
+                  MaterialPageRoute(builder: (context) => ViewPlayers()));},
             ),
           ),
           SizedBox(
@@ -122,7 +115,7 @@ class JoinTeam extends StatelessWidget{
 
 }
 
-class ViewTeam extends StatelessWidget{
+class ViewPlayers extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
     return Scaffold(

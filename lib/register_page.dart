@@ -23,14 +23,14 @@ class _RegisterScreenState extends State<RegisterPage>{
   final passController = TextEditingController();
   @override
   Widget build(BuildContext context) {
-    return Scaffold(appBar: AppBar(title: Text('Registration'),),
+    return Scaffold(appBar: AppBar(title: Text('Register for Pickup'),),
     body: Column(children: <Widget>[
       TextFormField(controller: nameController, decoration: new InputDecoration.collapsed(hintText: "Name"),),
       TextFormField(obscureText: true, controller: passController,decoration: new InputDecoration.collapsed(hintText: "Password"),),
       Container(
             child: RaisedButton(
               color: Colors.red,
-              child: Text("Register"),
+              child: Text("Register", style: TextStyle(color: Colors.white)),
               onPressed: _createUser,
           ),
           ),

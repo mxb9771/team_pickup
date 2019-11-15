@@ -28,7 +28,7 @@ class _loginPageState extends State<LoginPage>{
           Container(
             child: RaisedButton(
               color: Colors.red,
-              child: Text("Register"),
+              child: Text("Register", style: TextStyle(color: Colors.white)),
               onPressed: (){Navigator.push(context,
                     MaterialPageRoute(builder: (context) => RegisterPage(database: database,)));
               },
@@ -42,7 +42,7 @@ class _loginPageState extends State<LoginPage>{
           Container(
             child: RaisedButton(
               color: Colors.red,
-              child: Text("Login"),
+              child: Text("Login", style: TextStyle(color: Colors.white)),
               onPressed: _checkLogin,
           ),
           ),

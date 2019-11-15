@@ -6,7 +6,7 @@ class LeaguesPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.blueGrey,
+      backgroundColor: Colors.white,
       appBar: AppBar(
         title: Text("Leagues"),
       ),
@@ -16,7 +16,7 @@ class LeaguesPage extends StatelessWidget {
             width: double.infinity,
             child: RaisedButton(
               color: Colors.red,
-              child: Text("Open League, 5v5 Meets on Sundays"),
+              child: Text("Open League, 5v5 Meets on Sundays", style: TextStyle(color: Colors.white)),
               onPressed: (){
                 Navigator.push(context,
                     MaterialPageRoute(builder: (context) => JoinLeague()));

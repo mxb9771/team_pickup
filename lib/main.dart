@@ -5,6 +5,7 @@ import 'package:team_pickup/league_page.dart';
 import 'package:team_pickup/login_page.dart';
 import 'package:team_pickup/profile_page.dart';
 import 'package:team_pickup/teams_page.dart';
+import 'package:team_pickup/games_page.dart';
 
 
 void main() => runApp(MyApp());
@@ -34,17 +35,27 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.black,
+      backgroundColor: Colors.white,
       appBar: AppBar(
         title: Text("Pickup"),
       ),
       body: Column(
         children: <Widget>[
           SizedBox(
+            width: double.infinity,
+            child: RaisedButton(
+              color: Colors.red,
+              child: Text("Find Games", style: TextStyle(color: Colors.white)),
+              onPressed: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => GamesPage()));
+              },
+            )),
+          SizedBox(
               width: double.infinity,
               child: RaisedButton(
                 color: Colors.red,
-                child: Text("Teams"),
+                child: Text("Teams", style: TextStyle(color: Colors.white)),
                 onPressed: () {
                   Navigator.push(context,
                       MaterialPageRoute(builder: (context) => TeamsPage()));
@@ -54,7 +65,7 @@ class HomePage extends StatelessWidget {
               width: double.infinity,
               child: RaisedButton(
                 color: Colors.red,
-                child: Text("Leagues"),
+                child: Text("Leagues", style: TextStyle(color: Colors.white)),
                 onPressed: () {
                   Navigator.push(context,
                       MaterialPageRoute(builder: (context) => LeaguesPage()));
@@ -64,7 +75,7 @@ class HomePage extends StatelessWidget {
               width: double.infinity,
               child: RaisedButton(
                 color: Colors.red,
-                child: Text("Profile"),
+                child: Text("Profile", style: TextStyle(color: Colors.white)),
                 onPressed: () {
                   Navigator.push(context,
                       MaterialPageRoute(builder: (context) => ProfilePage(user: user,)));
