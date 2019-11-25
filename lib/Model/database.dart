@@ -1,6 +1,7 @@
 
 class Database{
   Map<String, String> accounts;
+  
 
   Database(){
     accounts = new Map<String, String>();
