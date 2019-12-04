@@ -99,9 +99,13 @@ Widget getMain(BuildContext context){
 Widget createLeague(BuildContext context, Database database){
     return Column(
           children: <Widget>[
-            TextFormField(decoration: new InputDecoration.collapsed(hintText: "Name"),
+            TextFormField(
+              style: new TextStyle(fontSize: 30),
+              decoration: new InputDecoration.collapsed(hintText: "Name"),
             controller: nameController,),
-            TextFormField(decoration: new InputDecoration.collapsed(hintText: "Bio"),
+            TextFormField(
+              style: TextStyle(fontSize: 30),
+              decoration: new InputDecoration.collapsed(hintText: "Bio"),
             controller: bioController,),
             SizedBox(
             width: double.infinity,

@@ -99,10 +99,22 @@ Widget getMain(BuildContext context){
 Widget createTeam(BuildContext context, Database database){
     return Column(
           children: <Widget>[
-            TextFormField(decoration: new InputDecoration.collapsed(hintText: "Name"),
+            Container(
+            height: 50,
+            child: TextFormField(
+              style: new TextStyle(
+                fontSize: 30
+              ),
+              decoration: new InputDecoration.collapsed(hintText: "Name"),
             controller: nameController,),
-            TextFormField(decoration: new InputDecoration.collapsed(hintText: "Bio"),
+            ),
+            Container(
+            height: 50,
+            child: TextFormField(
+              style: new TextStyle(fontSize: 30),
+              decoration: new InputDecoration.collapsed(hintText: "Bio"),
             controller: bioController,),
+            ),
             SizedBox(
             width: double.infinity,
             child: RaisedButton(
