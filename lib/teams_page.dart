@@ -159,12 +159,58 @@ class CreatedTeam extends StatelessWidget{
             width: double.infinity,
             child: RaisedButton(
               child: Text(name),
+              onPressed: (){
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => MyTeam(bio: this.bio)));
+              },
             ),
           ),
         ]
       )
     );
   }
+}
+
+class MyTeam extends StatelessWidget{
+  String bio;
+  MyTeam({Key key, this.bio});
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("My Team"),
+      ),
+      body: Column(
+        children: <Widget>[
+          Container(
+            width: 50,
+              height: 50,
+              child: Image.asset('assets/images/spartan.jpg')
+          ),
+          Container(
+            child: Text(bio),
+          ),
+          SizedBox(
+            width: double.infinity,
+            child: RaisedButton(
+              child: Text("View Players"),
+              onPressed: (){Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => ViewTeam()));},
+            ),
+          ),
+          SizedBox(
+            width: double.infinity,
+            child: RaisedButton(
+              child: Text("Leave Team"),
+              onPressed: (){Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => TeamsPage()));},
+            ),
+          )
+        ],
+      ),
+    );
+  }
+
 }
 
 
