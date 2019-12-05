@@ -25,8 +25,28 @@ class _RegisterScreenState extends State<RegisterPage>{
   Widget build(BuildContext context) {
     return Scaffold(appBar: AppBar(title: Text('Register for Pickup'),),
     body: Column(children: <Widget>[
-      TextFormField(controller: nameController, decoration: new InputDecoration.collapsed(hintText: "Name"),),
-      TextFormField(obscureText: true, controller: passController,decoration: new InputDecoration.collapsed(hintText: "Password"),),
+      TextFormField(
+        controller: nameController,
+        decoration: new InputDecoration(
+            hintText: "Name",
+            focusedBorder: OutlineInputBorder(
+                borderSide: BorderSide(color: Colors.redAccent,
+                    width: 1.0)
+            )
+
+        ),
+      ),
+      TextFormField(
+        controller: passController,
+        decoration: new InputDecoration(
+            hintText: "Password",
+            focusedBorder: OutlineInputBorder(
+                borderSide: BorderSide(color: Colors.redAccent,
+                    width: 1.0)
+            )
+
+        ),
+      ),
       Container(
             child: RaisedButton(
               color: Colors.red,

@@ -25,6 +25,36 @@ class _loginPageState extends State<LoginPage>{
     return Scaffold(appBar: AppBar(title: Text("Login"),),
     body: Column(
         children: <Widget>[
+
+          TextFormField(
+            controller: nameController,
+            decoration: new InputDecoration(
+              hintText: "Username",
+              focusedBorder: OutlineInputBorder(
+                borderSide: BorderSide(color: Colors.redAccent,
+                width: 1.0)
+              )
+
+            ),
+          ),
+          TextFormField(
+            controller: passController,
+            decoration: new InputDecoration(
+                hintText: "Password",
+                focusedBorder: OutlineInputBorder(
+                    borderSide: BorderSide(color: Colors.redAccent,
+                        width: 1.0)
+                )
+
+            ),
+          ),
+      Container(
+            child: RaisedButton(
+              color: Colors.red,
+              child: Text("Submit", style: TextStyle(color: Colors.white)),
+              onPressed: _checkLogin,
+            ),
+          ),
           Container(
             child: RaisedButton(
               color: Colors.red,
@@ -32,18 +62,6 @@ class _loginPageState extends State<LoginPage>{
               onPressed: (){Navigator.push(context,
                     MaterialPageRoute(builder: (context) => RegisterPage(database: database,)));
               },
-          ),
-          ),
-          Container(
-            child: Text("Or Log In Below:"),
-          ),
-          TextFormField(controller: nameController, decoration: new InputDecoration.collapsed(hintText: "Name"),),
-          TextFormField(controller: passController, decoration: new InputDecoration.collapsed(hintText: "Password"),),
-          Container(
-            child: RaisedButton(
-              color: Colors.red,
-              child: Text("Login", style: TextStyle(color: Colors.white)),
-              onPressed: _checkLogin,
           ),
           ),
         ],
